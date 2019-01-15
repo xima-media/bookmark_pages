@@ -1,5 +1,7 @@
 # Bookmark Pages TYPO3 Extension
 
+__Important notice:__ This is a fork of the original [colorcube/bookmark_pages](https://github.com/colorcube/bookmark_pages) extension to adjust the bookmarking functionalities for our own needs.
+
 This is a TYPO3 extension that provides bookmarks functionality of local pages for logged in frontend users.
 
 ## Usage
