@@ -49,7 +49,10 @@ class BookmarksController extends ActionController
         $url = GeneralUtility::_GP('url');
         $url = $url ? $url : null;
 
-        $bookmark = Bookmark::createFromCurrent($url);
+        $title = GeneralUtility::_GP('title');
+        $title = $title ? $title : null;
+
+        $bookmark = Bookmark::createFromCurrent($url, $title);
 
         $bookmarks = new Bookmarks();
         $bookmarks->addBookmark($bookmark);

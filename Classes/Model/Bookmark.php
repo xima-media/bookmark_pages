@@ -72,9 +72,10 @@ class Bookmark {
      * Create bookmark from the current TSFE page
      *
      * @param string url to bookmark, if null TYPO3_REQUEST_URL will be used - which is wrong when we're in ajax context, then we use HTTP_REFERER
+     * @param string title
      * @return Bookmark
      */
-    public static function createFromCurrent($url = null)
+    public static function createFromCurrent($url = null, $title = null)
     {
         if ($url === null) {
             if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest' ) {
@@ -87,7 +88,7 @@ class Bookmark {
 
 
         $pid = self::getFrontend()->id;
-        $title = self::getCurrentPageTitle();
+        $title = $title ? $title : self::getCurrentPageTitle();
 
         /*
 
